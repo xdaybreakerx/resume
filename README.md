@@ -1,6 +1,6 @@
 # Astro based Resume
 
-Previously I hosted a resume equivalent on Read.cv, which has since announced they are shutting down that feature following a merger. 
+Previously I hosted a resume equivalent on Read.cv, which has [since announced they are winding down](https://read.cv/a-new-chapter) their product as they are joining the team at Perplexity. 
 
 As such, I've recreated the functionality I want with Astro. 
 
