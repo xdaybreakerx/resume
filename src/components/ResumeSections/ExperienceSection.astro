@@ -1,0 +1,88 @@
+---
+import Section from '../Section.astro'
+import Card from '../Card.astro'
+
+interface Experience {
+	company: string
+	position: string
+	date: string
+	description: string[]
+}
+
+const experiences: Experience[] = [
+	{
+		company: 'Apple',
+		position: 'Genius (Technical Support Engineer equivalent)',
+		date: 'Aug 2019 - Present',
+		description: [
+			'Provided technical support to over 1,000 customers per year, consistently exceeding KPIs by 125-150% while helping team members enhance their performance by 40%.',
+
+			'Resolved complex hardware, software, and network issues by using detailed device and network logs to pinpoint root causes, developing a thorough, data-driven approach to troubleshooting.',
+
+			'Addressed compatibility issues across various first and third party applications, quickly adapting to diverse systems and identifying solutions for seamless functionality.',
+
+			'Served as a primary contact for site support engineering, coordinating with offsite teams to manage escalated technical issues and maintain continuity.',
+
+			'Supported the sales team with tailored product recommendations for business and enterprise customers, enhancing product alignment with client needs.',
+
+			'Created an internal automation tool that streamlined a key sales process by gathering configuration inputs and generating product pricing documents, reducing time spent on carrier-based sales tasks.'
+		]
+	},
+
+	{
+		company: 'Apple',
+		position: 'Lead (In-Store Experience) (Team Manager equivalent)',
+		date: 'Jul 2022 - 2023',
+		description: [
+			'Oversaw customer experience operations, achieving the highest Sales NPS in Australia in Q1 2022 by improving forecasting, resource management, and team coaching for over 150 Sales and Service team members.',
+
+			'Directed teams during high-demand periods, including product launches and peak seasons, meeting KPIs through consistent attention to team coordination and support.'
+		]
+	},
+
+	{
+		company: 'Apple',
+		position: 'Training Lead (In-Store Experience) (IT Trainer equivalent)',
+		date: 'Aug 2021 - Oct 2021',
+		description: [
+			'Created and implemented training programs for new tools and procedures, ensuring compliance with corporate standards for over 120 employees.',
+
+			'Produced comprehensive training materials and documentation, and led sessions in multiple formats, adapting communication to ensure clarity across technical subjects.'
+		]
+	},
+
+	{
+		company: 'Apple',
+		position: 'Genius Admin (Service Delivery Co-ordinator equivalent)',
+		date: 'Mar 2018 - Aug 2019',
+		description: [
+			'Directed the store’s response to a high-impact repair program, establishing internal workflows for service bookings, communications, and call strategies.',
+
+			'Utilised internal applications to streamline frequent tasks, reducing time spent on repetitive processes by 50%.'
+		]
+	},
+
+	{
+		company: 'Apple',
+		position: 'Technical Specialist (T2 Helpdesk equivalent)',
+		date: 'Oct 2017 - Mar 2018',
+		description: [
+			'Provided advanced troubleshooting and technical support, resolving a range of software and hardware issues with a detailed approach to documentation and issue analysis.'
+		]
+	}
+]
+---
+
+<Section title='Experience'>
+	{
+		experiences.map((experience) => (
+			<Card heading={experience.position} subheading={experience.company} date={experience.date}>
+				<ul class='ml-4 list-disc text-muted-foreground'>
+					{experience.description.map((desc) => (
+						<li>{desc}</li>
+					))}
+				</ul>
+			</Card>
+		))
+	}
+</Section>
