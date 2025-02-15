@@ -11,6 +11,18 @@ interface Project {
 
 const projects: Project[] = [
 	{
+		heading: 'Aftermath Archive - Incident Response and Post-Mortem Tracker',
+		tech: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Docker'],
+		description: [
+			'Developed a post-mortem documentation platform to track incidents, analyze root causes, and improve operational resilience.',
+
+			'Supports structured reporting, real-time collaboration, and categorization of incidents to streamline post-incident analysis.',
+
+			'Designed with a modular MERN stack architecture, featuring a robust backend API for structured data storage and a responsive, accessible front-end UI.'
+		],
+		href: 'https://github.com/Aftermath-Archive'
+	},
+	{
 		heading: 'SmallChop URL Shortener',
 		tech: ['Golang', 'HTMX', 'Redis', 'MongoDB', 'Caddy', 'Docker', 'DigitalOcean'],
 		description: [
@@ -21,18 +33,6 @@ const projects: Project[] = [
 			'GitHub Actions pipeline for continuous integration and deployment.'
 		],
 		href: 'https://github.com/xdaybreakerx/SmallChop'
-	},
-	{
-		heading: 'Finance Management API',
-		tech: ['Python', 'Flask', 'JWT', 'PostgreSQL'],
-		description: [
-			'Built a Flask-based API for secure CRUD operations, managing user accounts, transactions, and categorising expenses.',
-
-			'Integrated PostgreSQL via Neon.tech for scalability and optimised database performance.',
-
-			'Security focus with JWT-based authentication, input sanitisation, and error handling.'
-		],
-		href: 'https://github.com/xdaybreakerx/finance-management-api'
 	},
 	{
 		heading: 'QuizQuokka Flash Card Web App',
@@ -47,10 +47,16 @@ const projects: Project[] = [
 		href: 'https://github.com/xdaybreakerx/quizquokka'
 	},
 	{
-		heading: 'Aftermath Archive - Incident Response and Post-Mortem Tracking Web App',
-		tech: ['React', 'TailwindCSS', 'ShadCN', 'MongoDB', 'Express', 'Node.js', 'Docker'],
-		description: ['Description 1', 'Description 2', 'Description 3'],
-		href: 'https://github.com/Aftermath-Archive'
+		heading: 'Finance Management API',
+		tech: ['Python', 'Flask', 'JWT', 'PostgreSQL'],
+		description: [
+			'Built a Flask-based API for secure CRUD operations, managing user accounts, transactions, and categorising expenses.',
+
+			'Integrated PostgreSQL via Neon.tech for scalability and optimised database performance.',
+
+			'Security focus with JWT-based authentication, input sanitisation, and error handling.'
+		],
+		href: 'https://github.com/xdaybreakerx/finance-management-api'
 	}
 ]
 ---
