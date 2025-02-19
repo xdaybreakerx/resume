@@ -1,0 +1,54 @@
+name: Upload resume to S3
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Install Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+                  cache: npm
+
+            - name: Install dependencies
+              run: npm ci
+              working-directory: ./website
+
+            - name: Build
+              run: npm run build
+              working-directory: ./website
+
+            - name: Upload build artifact
+              uses: actions/upload-artifact@v3
+              with:
+                  name: website-dist
+                  path: ./website/dist
+
+    deploy:
+        needs: build
+        runs-on: ubuntu-latest
+        steps:
+            - name: Download build artifact
+              uses: actions/download-artifact@v3
+              with:
+                  name: website-dist
+                  path: ./dist
+
+            - name: Upload resume to S3
+              uses: jakejarvis/s3-sync-action@master
+              with:
+                  args: --acl public-read --follow-symlinks --delete
+              env:
+                  AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+                  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+                  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+                  AWS_REGION: ${{ secrets.AWS_REGION }}
+                  SOURCE_DIR: "./dist"
