@@ -7,3 +7,5 @@ As such, I've recreated the functionality I want with Astro.
 This will be used as an extension of my portfolio site, which you can [find here.](https://xandersalathe.com)
 
 This project is based on the [Astro Resume Theme by srleom.](https://astro.build/themes/details/resume/)
+
+This site uses GitHub Actions to push the website to an AWS S3 bucket for deployment.
