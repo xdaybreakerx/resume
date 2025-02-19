@@ -7,22 +7,19 @@ import { expressiveCodeOptions } from './src/site.config'
 import icon from 'astro-icon'
 
 
+import react from '@astrojs/react';
+
+
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://resume.xandersalathe.com',
-	integrations: [
-		expressiveCode(expressiveCodeOptions),
-		tailwind({
-			applyBaseStyles: false
-		}),
-		sitemap(),
-		mdx(),
-		icon()
-	],
-	
-	// prefetch: true,
-	// output: 'server',
-	// adapter: vercel({
-	// 	webAnalytics: { enabled: true }
-	// })
+    site: 'https://resume.xandersalathe.com',
+    integrations: [expressiveCode(expressiveCodeOptions), tailwind({
+        applyBaseStyles: false
+		}), sitemap(), mdx(), icon(), react()],
+    
+    // prefetch: true,
+    // output: 'server',
+    // adapter: vercel({
+    // 	webAnalytics: { enabled: true }
+    // })
 })

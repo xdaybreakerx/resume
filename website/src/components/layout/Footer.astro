@@ -1,9 +1,7 @@
 ---
-async function updateCounter() {
-	const res = await fetch('https://libynmctxva4fytmw42hm3mn4y0ntqxs.lambda-url.us-east-1.on.aws/')
-	let data = await res.json()
-	return data
-}
+import VisitorCounter from "../VisitorCounter";
+
+
 ---
 
 <footer class='mx-auto mt-24 w-full'>
@@ -23,8 +21,7 @@ async function updateCounter() {
 				<div class='flex items-center gap-x-4'>
 					<div>
 						<p class='text-sm text-muted-foreground' id='counter'>
-							Visitors:
-							{updateCounter}
+							<VisitorCounter />
 						</p>
 					</div>
 					
