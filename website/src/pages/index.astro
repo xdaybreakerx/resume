@@ -1,0 +1,28 @@
+---
+import PageLayout from '../layouts/BaseLayout.astro'
+
+import AboutSection from '@/components/ResumeSections/AboutSection.astro'
+import HeaderSection from '@/components/ResumeSections/HeaderSection.astro'
+import ExperienceSection from '@/components/ResumeSections/ExperienceSection.astro'
+import EducationSection from '@/components/ResumeSections/EducationSection.astro'
+import ProjectSection from '@/components/ResumeSections/ProjectSection.astro'
+import CertificationSection from '@/components/ResumeSections/CertificationSection.astro'
+import SkillsSection from '@/components/ResumeSections/SkillsSection.astro'
+import PDFLinkButton from '@/components/ResumeSections/PDFLinkButton.astro'
+---
+
+<PageLayout meta={{ title: 'Home' }}>
+	<div class='pb-5'>
+		<PDFLinkButton />
+	</div>
+
+	<div class='flex w-full flex-col gap-y-10'>
+		<HeaderSection />
+		<AboutSection />
+		<SkillsSection />
+		<ProjectSection />
+		<EducationSection />
+		<CertificationSection />
+		<ExperienceSection />
+	</div>
+</PageLayout>
