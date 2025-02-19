@@ -11,6 +11,7 @@ function VisitorCounter() {
 				)
 				const data = await res.json()
 				setCounter(data)
+				console.log('Counter:', data)
 			} catch (error) {
 				console.error('Failed to fetch counter:', error)
 			}
