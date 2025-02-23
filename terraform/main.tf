@@ -94,10 +94,7 @@ resource "aws_cloudfront_origin_request_policy" "resume_request_policy" {
   comment = "Origin request policy for resume S3"
 
   headers_config {
-    header_behavior = "whitelist"
-    headers {
-      items = ["Host"]
-    }
+    header_behavior = "none"
   }
 
   query_strings_config {
@@ -107,4 +104,28 @@ resource "aws_cloudfront_origin_request_policy" "resume_request_policy" {
   cookies_config {
     cookie_behavior = "none"
   }
+}
+
+
+resource "aws_s3_bucket_policy" "resume_bucket_policy" {
+  bucket = aws_s3_bucket.cloud_resume_bucket.id
+
+  policy = jsonencode({
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Effect = "Allow",
+        Principal = {
+          Service = "cloudfront.amazonaws.com"
+        },
+        Action   = "s3:GetObject",
+        Resource = "${aws_s3_bucket.cloud_resume_bucket.arn}/*",
+        Condition = {
+          StringEquals = {
+            "AWS:SourceArn" = "arn:aws:cloudfront::911167911932:distribution/${aws_cloudfront_distribution.resume_cdn.id}"
+          }
+        }
+      }
+    ]
+  })
 }
