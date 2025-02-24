@@ -10,6 +10,8 @@ The project design is based on the [Astro Resume Theme by srleom.](https://astro
 
 This project is hosted on AWS following the high level guidelines from the [Cloud Resume Challenge.](https://cloudresumechallenge.dev/docs/the-challenge/aws/)
 
+You can also find a [discussion on this project here.](https://xandersalathe.com/blog/beyond-netlify-hosting-a-static-site-with-aws-and-terraform)
+
 # Deployment and Infrastructure
 
 ## GitHub Actions
@@ -18,18 +20,23 @@ This project leverages GitHub Actions for continuous integration and deployment.
 
 ## Terraform
 
-Terraform is used to provision and manage key AWS infrastructure components such as CloudFront distributions and S3 configurations. This infrastructure-as-code approach not only streamlines deployments but also keeps the setup consistent and easily maintainable. Future expansions would be to include the DynamoDB setup, and pushing the Python API script to the Lambda function. 
+Terraform is used to provision and manage key AWS infrastructure components such as CloudFront distributions and S3 configurations. This infrastructure-as-code approach not only streamlines deployments but also keeps the setup consistent and easily maintainable. Future expansions would be to include the DynamoDB setup, and pushing the Python API script to the Lambda function.
 
 ## AWS Services Used
+
 ### Account Configuration
-- AWS IAM
-- AWS Account Manager
-- AWS Billing Center
+
+-   AWS IAM
+-   AWS Account Manager
+-   AWS Billing Center
+
 ---
+
 ### Hosting
-- AWS S3
-- AWS ACM
-- AWS CloudFront
-- AWS DynamoDB
-- AWS Lambda
-- AWS Route 52 (or Cloudflare)
+
+-   AWS S3
+-   AWS ACM
+-   AWS CloudFront
+-   AWS DynamoDB
+-   AWS Lambda
+-   AWS Route 52 (or Cloudflare)
