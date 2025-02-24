@@ -11,17 +11,17 @@ interface Project {
 
 const projects: Project[] = [
 	{
-		heading: 'Aftermath Archive - Incident Response and Post-Mortem Tracker',
-		tech: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Docker'],
+		heading: "AWS - Cloud-Hosted Digital Resume",
+		tech: ["Astro.js", "AWS S3", "AWS CloudFront", "AWS Lambda", "AWS DynamoDB", "Terraform"],
 		description: [
-			'Developed a post-mortem documentation platform to track incidents, analyze root causes, and improve operational resilience.',
-
-			'Supports structured reporting, real-time collaboration, and categorization of incidents to streamline post-incident analysis.',
-
-			'Designed with a modular MERN stack architecture, featuring a robust backend API for structured data storage and a responsive, accessible front-end UI.'
+			"Developed a serverless, cloud-hosted digital resume using Astro, leveraging AWS services for deployment and scalability.",
+			
+			"Automated infrastructure provisioning with Terraform, managing S3 for static hosting, CloudFront for distribution, and Lambda for visitor tracking API. Automated deployment with GitHub Actions",
+			
+			"Implemented DynamoDB for tracking visitor metrics, with Cloudflare handling DNS and security configurations."
 		],
-		href: 'https://github.com/Aftermath-Archive'
-	},
+		href: "https://github.com/xdaybreakerx/resume"
+    },
 	{
 		heading: 'SmallChop URL Shortener',
 		tech: ['Golang', 'HTMX', 'Redis', 'MongoDB', 'Caddy', 'Docker', 'DigitalOcean'],
@@ -35,16 +35,16 @@ const projects: Project[] = [
 		href: 'https://github.com/xdaybreakerx/SmallChop'
 	},
 	{
-		heading: 'QuizQuokka Flash Card Web App',
-		tech: ['React', 'TailwindCSS', 'ShadCN', 'Firebase'],
+		heading: 'Aftermath Archive - Incident Response and Post-Mortem Tracker',
+		tech: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Docker'],
 		description: [
-			'Built a responsive flashcard app for practicing CS topics such as languages, and algorithms.',
+			'Developed a post-mortem documentation platform to track incidents, analyze root causes, and improve operational resilience.',
 
-			'Achieved 98 Performance, 93 Accessibility, and 100 Best Practices scores on Lighthouse, ensuring a fast and accessible user experience.',
+			'Supports structured reporting, real-time collaboration, and categorization of incidents to streamline post-incident analysis.',
 
-			'Styled with TailwindCSS and ShadCN, deployed on Netlify with Firebase backend and auth, Firestore database, and serverless functions. Integrated AI explanations with Llama 3 via GroqCloud.'
+			'Designed with a modular MERN stack architecture, featuring a robust backend API for structured data storage and a responsive, accessible front-end UI.'
 		],
-		href: 'https://github.com/xdaybreakerx/quizquokka'
+		href: 'https://github.com/Aftermath-Archive'
 	},
 	{
 		heading: 'Finance Management API',
@@ -57,7 +57,7 @@ const projects: Project[] = [
 			'Security focus with JWT-based authentication, input sanitisation, and error handling.'
 		],
 		href: 'https://github.com/xdaybreakerx/finance-management-api'
-	}
+	},
 ]
 ---
 
